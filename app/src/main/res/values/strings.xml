@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">FCROM</string>
+    <string name="runtime_permissions_txt">Please enable ALL permissions from app settings</string>
+
+    <!--Receive-->
+    <string name="noofcrate">No Of Crates : </string>
+
+    <string name="tripno">Trip No : </string>
+    <string name="orders">Orders : </string>
+    <string name="crates">Crates : </string>
+    <string name="vehicleno">Vehicle No: </string>
+    <string name="crateno">Crate No : </string>
+    <string name="location">Location : </string>
+    <string name="enterlastdigitsofcrate">Enter Last 4 digits of the Crate No.</string>
+    <string name="statuscolon">Status : </string>
+    <string name="deliveryboy">Delivery boy: </string>
+    <string name="scantoreceive">Scan To Receive.</string>
+
+</resources>

@@ -1,0 +1,83 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "26.0.0"
+    dataBinding {
+        enabled = true
+    }
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    signingConfigs {
+        dev {
+            keyAlias 'dmartmom'
+            keyPassword 'dmart123'
+            storeFile file('DMartMOM.jks')
+            storePassword 'dmart123'
+        }
+        uat {
+            keyAlias 'dmartmom'
+            keyPassword 'dmart123'
+            storeFile file('DMartMOM.jks')
+            storePassword 'dmart123'
+        }
+        prod {
+
+            keyAlias 'dmartmom'
+            keyPassword 'dmart123'
+            //v2SigningEnabled false
+            storeFile file('DMartMOM.jks')
+            storePassword 'dmart123'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.fcrom.dmart.in"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        android.variantFilter { variant ->
+            if (variant.buildType.name.equals('release') || variant.buildType.name.equals('debug')) {
+                variant.setIgnore(true);
+            }
+        }
+        uat {
+            debuggable true
+            signingConfig signingConfigs.uat
+            minifyEnabled false
+            zipAlignEnabled true
+            applicationIdSuffix ".uat"
+            buildConfigField "String", "URL_ENDPOINT", "\"http://your.development.endpoint.com/\""
+
+        }
+
+        prod {
+            debuggable false
+            jniDebuggable false
+            signingConfig signingConfigs.prod
+            renderscriptDebuggable false
+            minifyEnabled false
+            zipAlignEnabled true
+            applicationIdSuffix ".prod"
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile project(':library')
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support:design:25.0.1'
+    testCompile 'junit:junit:4.12'
+
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="version">UAT - 1.2</string>
+
+
+    <string name="baseurl">https://momapiu.dmart.in:443</string>
+    <string name="slackwebhookkey">T0GSCBPUJ/B4T717ULA/ClSewk5vBcYZ3PxWQj5w3tAT</string>
+
+
+</resources>

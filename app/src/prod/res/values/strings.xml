@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="version">PROD - 1.2</string>
+
+    <string name="baseurl">https://momapip.dmart.in:443</string>
+    <string name="slackwebhookkey">T0GSCBPUJ/B4SC05G2D/YDhUBAq3gv5MiFQyFV5L5yb2</string>
+
+</resources>
