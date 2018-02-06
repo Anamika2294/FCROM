@@ -72,7 +72,7 @@ public class TripsAdapter extends RecyclerView.Adapter<TripsAdapter.Holder> {
             public void onClick(View view) {
 
 
-                   // Logger.log(TAG,"datalistsize"+datalist.get(holder.getAdapterPosition()).getCrateList().size()+" Position"+position);
+                    Logger.log(TAG,"datalistsize"+datalist.get(holder.getAdapterPosition()).getCrateList().size()+" Position"+position);
                     if(datalist.get(holder.getAdapterPosition()).getCrateList().size()>0 && datalist.get(holder.getAdapterPosition()).getCrateList() !=null && !datalist.get(holder.getAdapterPosition()).getCrateList().isEmpty()){
                         Intent intent = new Intent(mContext, TripReceiveListActivity.class);
                         intent.putExtra("position",holder.getAdapterPosition());
